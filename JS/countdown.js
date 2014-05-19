@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 var enddate = 'May 25, 2014 19:00:00';
 
 // wrapped as function
 var countdown = function(endDate){
+=======
+//Define the enddate
+var endDate = new Date('May 25, 2014 16:01:00');
+console.log(endDate);
+>>>>>>> f4429675a36cb5ede2a0f95ac65971141a579bb6
 
 // get time derivates
 var now = new Date();
@@ -46,6 +52,11 @@ if (remDay < 1 && remHr < 1) {
 } else {
 	console.log("" + Math.floor(remDay) + " " + dd + ", " + Math.floor(remHr-(Math.floor(remDay)*24)) + " " + hh + ", " + + Math.floor(remMin-(Math.floor(remHr)*60)) + " " + mm + ", " + Math.floor(remSec-(Math.floor(remMin)*60)) + " seconds and " + Math.floor(remMsec-(Math.floor(remSec)*1000)) + " msec");
 };
+<<<<<<< HEAD
 };
 
 console.log(countdown('May 25, 2014 19:00:00')); //Define the enddate in this format 'May 25, 2014 19:00:00'
+=======
+
+// innerHTML
+>>>>>>> f4429675a36cb5ede2a0f95ac65971141a579bb6
