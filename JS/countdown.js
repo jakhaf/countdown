@@ -1,5 +1,5 @@
 //Define the enddate
-var endDate = new Date('May 21, 2014 00:00:00');
+var endDate = new Date('May 20, 2014 16:01:00');
 console.log(endDate);
 
 // get time derivates
@@ -23,14 +23,20 @@ console.log(remDay + " d");
 
 // rounding and combination
 
-if (remDay < 1) {
-	console.log("" + Math.floor(remHr) + " hours ");
+if (remDay < 1 && remHr < 1) {
+	console.log("" + Math.floor(remMin-(Math.floor(remHr)*60)) + " minutes, " + Math.floor(remSec-(Math.floor(remMin)*60)) + " seconds and " + Math.floor(remMsec-(Math.floor(remSec)*1000)) + " msec");
+} else if (remDay < 1) {
+	console.log("" + Math.floor(remHr-(Math.floor(remDay)*24)) + " hours, " + Math.floor(remMin-(Math.floor(remHr)*60)) + " minutes, " + Math.floor(remSec-(Math.floor(remMin)*60)) + " seconds and " + Math.floor(remMsec-(Math.floor(remSec)*1000)) + " msec");		
 } else {
-	console.log("" + Math.floor(remDay) + " day(s), " + Math.floor(remHr-(Math.floor(remDay)*24)) + " hours");
+	console.log("" + Math.floor(remDay) + " day(s), " + Math.floor(remHr-(Math.floor(remDay)*24)) + " hours, " + Math.floor(remMin-(Math.floor(remHr)*60)) + " minutes, " + Math.floor(remSec-(Math.floor(remMin)*60)) + " seconds and " + Math.floor(remMsec-(Math.floor(remSec)*1000)) + " msec");
 };
 
 
-
+/*else if (remDay < 1 && remHr < 1) {
+	
+} else if {
+	console.log("" + )
+}
 
 
 
@@ -38,5 +44,5 @@ console.log(remDay);
 
 if (remHr % 24 <= 0) {
 	console.log(remHr)
-}
+}*/
 
