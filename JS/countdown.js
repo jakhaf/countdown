@@ -1,11 +1,11 @@
-
+var myVar = setInterval(countdown,1000);
 // wrapped as function
 var countdown = function(){
 
 var el = document.getElementById(countdown);
 
 //Define the enddate
-var endDate = new Date('May 25, 2014 16:01:00');
+var endDate = new Date('May 19, 2014 17:00:00');
 
 // get time derivates
 var now = new Date();
@@ -44,7 +44,7 @@ if (Math.floor(remMin) <= 1){
 // rounding and combination
 
 if (remDay < 1 && remHr < 1) {
-	document.write("" + Math.floor(remMin-(Math.floor(remHr)*60)) + " " + mm + ", " + Math.floor(remSec-(Math.floor(remMin)*60)) + " seconds and " + Math.floor(remMsec-(Math.floor(remSec)*1000)) + " msec");
+	document.write("<p>" + Math.floor(remMin-(Math.floor(remHr)*60)) + " " + mm + ", " + Math.floor(remSec-(Math.floor(remMin)*60)) + " seconds and " + Math.floor(remMsec-(Math.floor(remSec)*1000)) + " msec </p>");
 } else if (remDay < 1) {
 	document.write("" + Math.floor(remHr-(Math.floor(remDay)*24)) + " " + hh + ", " + Math.floor(remMin-(Math.floor(remHr)*60)) + " " + mm + ", " + Math.floor(remSec-(Math.floor(remMin)*60)) + " seconds and " + Math.floor(remMsec-(Math.floor(remSec)*1000)) + " msec");		
 } else {
@@ -55,5 +55,4 @@ if (remDay < 1 && remHr < 1) {
 
 console.log(countdown()); //Define the enddate in this format 'May 25, 2014 19:00:00'
 
-
-// innerHTML
+var interval = setInterval(function() { countdown(); },1000);
