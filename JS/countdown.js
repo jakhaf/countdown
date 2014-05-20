@@ -1,11 +1,11 @@
-var myVar = setInterval(countdown,1000);
+
 // wrapped as function
 var countdown = function(){
 
 var el = document.getElementById(countdown);
 
-//Define the enddate
-var endDate = new Date('May 19, 2014 17:00:00');
+//Define the enddate //Define the enddate in this format 'May 25, 2014 19:00:00'
+var endDate = new Date('May 25, 2014 17:00:00');
 
 // get time derivates
 var now = new Date();
@@ -22,6 +22,8 @@ var remDay = remHr * 0.0416666667;
 //console.log(remDay + " d");
 
 //day(s), hour(s), minute(s), improvement
+
+
 if (Math.floor(remDay) <= 1){
 	var dd = "day";
 } else {
@@ -41,18 +43,25 @@ if (Math.floor(remMin) <= 1){
 };
 
 
+
 // rounding and combination
-
-if (remDay < 1 && remHr < 1) {
-	document.write("<p>" + Math.floor(remMin-(Math.floor(remHr)*60)) + " " + mm + ", " + Math.floor(remSec-(Math.floor(remMin)*60)) + " seconds and " + Math.floor(remMsec-(Math.floor(remSec)*1000)) + " msec </p>");
+if (remMsec < 0){
+	var count = "No time left!"}
+else if (remDay < 1 && remHr < 1) {
+	var count = ("<p>" + Math.floor(remMin-(Math.floor(remHr)*60)) + " " + mm + ", " + Math.floor(remSec-(Math.floor(remMin)*60)) + " seconds and " + Math.floor(remMsec-(Math.floor(remSec)*1000)) + " msec </p>");
 } else if (remDay < 1) {
-	document.write("" + Math.floor(remHr-(Math.floor(remDay)*24)) + " " + hh + ", " + Math.floor(remMin-(Math.floor(remHr)*60)) + " " + mm + ", " + Math.floor(remSec-(Math.floor(remMin)*60)) + " seconds and " + Math.floor(remMsec-(Math.floor(remSec)*1000)) + " msec");		
+	var count = ("" + Math.floor(remHr-(Math.floor(remDay)*24)) + " " + hh + ", " + Math.floor(remMin-(Math.floor(remHr)*60)) + " " + mm + ", " + Math.floor(remSec-(Math.floor(remMin)*60)) + " seconds and " + Math.floor(remMsec-(Math.floor(remSec)*1000)) + " msec");		
 } else {
-	document.write("" + Math.floor(remDay) + " " + dd + ", " + Math.floor(remHr-(Math.floor(remDay)*24)) + " " + hh + ", " + + Math.floor(remMin-(Math.floor(remHr)*60)) + " " + mm + ", " + Math.floor(remSec-(Math.floor(remMin)*60)) + " seconds and " + Math.floor(remMsec-(Math.floor(remSec)*1000)) + " msec");
+	var count = ("" + Math.floor(remDay) + " " + dd + ", " + Math.floor(remHr-(Math.floor(remDay)*24)) + " " + hh + ", " + + Math.floor(remMin-(Math.floor(remHr)*60)) + " " + mm + ", " + Math.floor(remSec-(Math.floor(remMin)*60)) + " seconds and " + Math.floor(remMsec-(Math.floor(remSec)*1000)) + " msec");
+};
+console.log(count);
+console.log(remMsec);
+
 };
 
-};
+ 
 
-console.log(countdown()); //Define the enddate in this format 'May 25, 2014 19:00:00'
+//var interval = setInterval(function() { countdown(); },1000);
 
-var interval = setInterval(function() { countdown(); },1000);
+//var countInterval = setInterval(countdown,1000);
+countdown();
