@@ -25,19 +25,19 @@ window.onload = function()
 		//day(s), hour(s), minute(s), improvement
 
 
-		if (Math.floor(remDay) <= 1){
+		if (remDay < 2){
 			var dd = "day";
 		} else {
 			var dd = "days";
 		};
 
-		if (Math.floor(remHr) <= 1){
+		if (remHr < 2){
 			var hh = "hour";
 		} else {
 			var hh = "hours";
 		};
 
-		if (Math.floor(remMin) <= 1){
+		if (remMin < 2){
 			var mm = "minute";
 		} else {
 			var mm = "minutes";
@@ -62,7 +62,7 @@ window.onload = function()
 	};
 
 	//refresher
-	var countInterval = setInterval(countdown,100);
+	var countInterval = setInterval(countdown,1);
 	
 	//exec
 	countdown();
